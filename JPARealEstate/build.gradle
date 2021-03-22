@@ -1,5 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
+plugins {
+    id 'groovy'
+    id 'java'
+    id 'eclipse'
+}
 
 /*
 name your project's dependency group and give it an initial version.
