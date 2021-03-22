@@ -177,3 +177,42 @@ GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'admin';
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `realestatedb`;
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `email`) VALUES (1, 'admin', 'admin', 'admin', 'admin', 'admin@email.com');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `address`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `realestatedb`;
+INSERT INTO `address` (`id`, `street`, `city`, `state_abbrv`, `zip`) VALUES (1, 'test st', 'hooville', 'CO', '00000');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `task`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `realestatedb`;
+INSERT INTO `task` (`id`, `name`, `desc`, `task_location`, `updated_at`) VALUES (1, 'gutters', 'check and clean gutters if need ', 'outdoor', NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `address_has_task`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `realestatedb`;
+INSERT INTO `address_has_task` (`address_id`, `task_id`, `due_date`) VALUES (1, 1, '04-24-22');
+
+COMMIT;
