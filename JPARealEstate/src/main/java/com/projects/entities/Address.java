@@ -1,5 +1,6 @@
 package com.projects.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,7 @@ public class Address {
 private int id;
 private String street;
 private String city;
+@Column(name="state_abbrv")
 private String stateAbv;
 private String zip;
 public int getId() {
