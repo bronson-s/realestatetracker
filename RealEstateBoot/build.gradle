@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.4'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
 	id 'war'
 }
@@ -9,13 +9,25 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+apply plugin: 'war'
+war {
+  enabled = true
+  // Gradle will replace the variable baseName
+  // with our app name, as defined in settings.gradle
+  archiveName = "${baseName}.war"
+  destinationDir = file("./")         // Project root directory
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+	compile project(':JPARealEstate')
+	compile('org.springframework.boot:spring-boot-starter-security')
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation ('org.springframework.boot:spring-boot-starter-tomcat')
 	runtimeOnly 'mysql:mysql-connector-java'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
