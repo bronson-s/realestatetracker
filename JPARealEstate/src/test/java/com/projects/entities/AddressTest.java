@@ -44,9 +44,9 @@ public class AddressTest {
 	@Test
 	void test() {
 		assertNotNull(address);
-		assertEquals("Denver", address.getCity());
+		assertEquals("hooville", address.getCity());
 		assertEquals("CO", address.getStateAbv());
-		assertEquals("123 Downing", address.getStreet());
-		assertEquals("80203", address.getZip());
+		assertEquals("test st", address.getStreet());
+		assertEquals("00000", address.getZip());
 	}
 }
